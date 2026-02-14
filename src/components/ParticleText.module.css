@@ -1,0 +1,71 @@
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.text {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 900;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    #ff69b4,
+    #ff1493,
+    #ff69b4,
+    #ffb6c1
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite;
+  filter: drop-shadow(0 0 30px rgba(255, 105, 180, 0.6));
+  letter-spacing: 0.05em;
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+}
+
+.text span {
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.particleContainer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  font-size: 24px;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8));
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .text {
+    font-size: clamp(2rem, 8vw, 4rem);
+  }
+
+  .particle {
+    font-size: 16px;
+  }
+}

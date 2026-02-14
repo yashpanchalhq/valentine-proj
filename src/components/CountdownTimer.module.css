@@ -1,0 +1,123 @@
+.container {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border-radius: 32px;
+    border: 2px solid rgba(255, 182, 193, 0.5);
+    box-shadow: 0 8px 32px rgba(255, 105, 180, 0.2);
+}
+
+.title {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.3rem;
+    color: #cc267b;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #ff91b5 0%, #ff69b4 100%);
+    padding: 1rem 1.25rem;
+    border-radius: 20px;
+    min-width: 80px;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+}
+
+.value {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    line-height: 1;
+}
+
+.label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+.loading {
+    font-size: 3rem;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+.celebration {
+    text-align: center;
+    padding: 2rem;
+}
+
+.bigHeart {
+    font-size: 6rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 8px 24px rgba(255, 20, 147, 0.6));
+}
+
+.celebrationTitle {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ff69b4, #ff1493, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+}
+
+.celebrationMessage {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.4rem;
+    color: #cc267b;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem 1rem;
+    }
+
+    .timer {
+        gap: 0.75rem;
+    }
+
+    .unit {
+        min-width: 65px;
+        padding: 0.75rem 1rem;
+    }
+
+    .value {
+        font-size: 1.8rem;
+    }
+
+    .title {
+        font-size: 1.1rem;
+    }
+}

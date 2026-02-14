@@ -1,0 +1,83 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 2px solid rgba(255, 182, 193, 0.3);
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.logoEmoji {
+    font-size: 1.8rem;
+}
+
+.logoText {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #cc267b;
+}
+
+.days {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.dayLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 182, 193, 0.2);
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.dayLink:hover {
+    background: rgba(255, 105, 180, 0.3);
+    transform: translateY(-2px);
+}
+
+.dayLink.active {
+    background: linear-gradient(135deg, #ff91b5 0%, #ff69b4 100%);
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+}
+
+@media (max-width: 768px) {
+    .nav {
+        padding: 0.75rem 1rem;
+    }
+
+    .logoText {
+        display: none;
+    }
+
+    .days {
+        gap: 0.25rem;
+    }
+
+    .dayLink {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+}

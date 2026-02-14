@@ -1,27 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap');
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Hello Kitty Pink Palette */
+  --pink-50: #fff0f5;
+  --pink-100: #ffe4ec;
+  --pink-200: #ffc9da;
+  --pink-300: #ffadc8;
+  --pink-400: #ff91b5;
+  --pink-500: #ff69b4; /* Hot Pink - Primary */
+  --pink-600: #ff4da3;
+  --pink-700: #e6398f;
+  --pink-800: #cc267b;
+  --pink-900: #b31367;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  /* Accent Colors */
+  --cream: #fff8f0;
+  --blush: #ffd1dc;
+  --rose-gold: #e8b4b8;
+  --soft-white: #fffbfc;
+  --heart-red: #ff6b8a;
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+  /* Typography */
+  --font-display: 'Quicksand', sans-serif;
+  --font-body: 'Nunito', sans-serif;
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Shadows */
+  --shadow-soft: 0 4px 20px rgba(255, 105, 180, 0.15);
+  --shadow-glow: 0 0 30px rgba(255, 105, 180, 0.3);
+  --shadow-card: 0 8px 32px rgba(255, 105, 180, 0.2);
+
+  /* Borders */
+  --border-radius-sm: 12px;
+  --border-radius-md: 20px;
+  --border-radius-lg: 32px;
+  --border-radius-full: 9999px;
+
+  /* Transitions */
+  --transition-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 * {
@@ -30,13 +45,128 @@ body {
   margin: 0;
 }
 
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-body);
+  background: linear-gradient(135deg, var(--pink-50) 0%, var(--cream) 50%, var(--blush) 100%);
+  min-height: 100vh;
+  color: var(--pink-800);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* Glassmorphism Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+/* Kawaii Button Base */
+.kawaii-btn {
+  font-family: var(--font-display);
+  font-weight: 600;
+  padding: 14px 32px;
+  border: none;
+  border-radius: var(--border-radius-full);
+  cursor: pointer;
+  transition: all 0.3s var(--transition-bounce);
+  background: linear-gradient(135deg, var(--pink-400) 0%, var(--pink-500) 100%);
+  color: white;
+  font-size: 1rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.kawaii-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: var(--shadow-glow);
+}
+
+.kawaii-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes floatHeart {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Utility Classes */
+.text-gradient {
+  background: linear-gradient(135deg, var(--pink-500) 0%, var(--heart-red) 50%, var(--pink-600) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Page Container */
+.page-container {
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 1rem;
+  }
+  
+  .kawaii-btn {
+    padding: 12px 24px;
+    font-size: 0.9rem;
   }
 }

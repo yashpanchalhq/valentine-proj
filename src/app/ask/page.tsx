@@ -1,9 +1,9 @@
 'use client';
 
-import { motion, useMotionValue, animate } from 'framer-motion';
+import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import styles from './ask/page.module.css';
+import styles from './page.module.css';
 
 export default function AskPage() {
   const router = useRouter();
@@ -77,8 +77,8 @@ export default function AskPage() {
           >
             💕
           </motion.div>
-          <h1 className={styles.yayTitle}>Yay! I Love You, Anu! 💖</h1>
-          <p className={styles.yayMessage}>Get ready for the most magical week of our lives...</p>
+          <h1 className={styles.yayTitle}>Yay! I Love You! 💖</h1>
+          <p className={styles.yayMessage}>Get ready for the most romantic week ever...</p>
         </motion.div>
       </div>
     );
@@ -106,8 +106,8 @@ export default function AskPage() {
           💝
         </motion.div>
         
-        <h1 className={styles.title}>Anu Rawat, Will You Be My Valentine?</h1>
-        <p className={styles.subtitle}>Pretty please? 🥺✨</p>
+        <h1 className={styles.title}>Will You Be My Valentine?</h1>
+        <p className={styles.subtitle}>Pretty please? 🥺</p>
         
         <div className={styles.buttons}>
           <motion.button
