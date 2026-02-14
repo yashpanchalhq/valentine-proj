@@ -94,7 +94,7 @@ export default function CountdownTimer() {
             🎉 IT'S VALENTINE'S DAY! 🎉
           </h2>
           <p className={styles.celebrationMessage}>
-            Happy Valentine's Day, Anu Rawat! 💕
+            Happy Valentine's Day, Annu🍒! 💕
             <br />
             This is OUR day! ✨
           </p>
@@ -112,7 +112,7 @@ export default function CountdownTimer() {
 
   return (
     <div className={styles.container}>
-      <h3 className={styles.title}>Countdown to Valentine's Day with Anu 💕</h3>
+      <h3 className={styles.title}>Countdown to Valentine's Day with Annu 💕</h3>
       <div className={styles.timer}>
         {timeUnits.map((unit, index) => (
           <motion.div

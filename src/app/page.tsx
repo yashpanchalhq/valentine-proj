@@ -106,7 +106,7 @@ export default function AskPage() {
           💝
         </motion.div>
         
-        <h1 className={styles.title}>Anu Rawat, Will You Be My Valentine?</h1>
+        <h1 className={styles.title}>Annu🍒, Will You Be My Valentine?</h1>
         <p className={styles.subtitle}>Pretty please? 🥺✨</p>
         
         <div className={styles.buttons}>

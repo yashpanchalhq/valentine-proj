@@ -43,7 +43,7 @@ export default function ReasonCounter() {
         <motion.h2 className={styles.number}>
           {rounded}
         </motion.h2>
-        <p className={styles.label}>Reasons Why I Love Anu Rawat</p>
+        <p className={styles.label}>Reasons Why I Love Annu🍒</p>
 
         <motion.button
           className={styles.btn}

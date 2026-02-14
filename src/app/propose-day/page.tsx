@@ -1,8 +1,8 @@
 import DayPage from '@/components/DayPage';
 
 export const metadata = {
-  title: 'Propose Day 💝 | For Anu Rawat',
-  description: 'Happy Propose Day, Anu! You are my forever choice.',
+  title: 'Propose Day 💝 | For Annu🍒',
+  description: 'Happy Propose Day, Annu! You are my forever choice.',
 };
 
 export default function ProposeDay() {

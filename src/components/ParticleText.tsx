@@ -51,7 +51,7 @@ export default function ParticleText({ text }: ParticleTextProps) {
           duration: 1.5
         }}
       >
-        {text.split('').map((char, index) => (
+        {Array.from(text).map((char, index) => (
           <motion.span
             key={index}
             initial={{ opacity: 0, y: 50 }}

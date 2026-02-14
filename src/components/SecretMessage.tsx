@@ -64,7 +64,7 @@ export default function SecretMessage() {
             💖
           </motion.div>
 
-          <h2>For Anu Rawat 💕</h2>
+          <h2>For Annu🍒 💕</h2>
 
           <div className={styles.message}>
             <p>

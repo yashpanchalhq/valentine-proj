@@ -1,8 +1,8 @@
 import DayPage from '@/components/DayPage';
 
 export const metadata = {
-  title: 'Rose Day 🌹 | For Anu Rawat',
-  description: 'Happy Rose Day, Anu! A rose as beautiful as you.',
+  title: 'Rose Day 🌹 | For Annu🍒',
+  description: 'Happy Rose Day, Annu! A rose as beautiful as you.',
 };
 
 export default function RoseDay() {
