@@ -113,6 +113,18 @@
     font-style: italic;
 }
 
+.rejectionMessage {
+    margin-top: 1.5rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #ffb6c1, #ff91b5);
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.4);
+}
+
 /* Celebration Screen */
 .celebration {
     text-align: center;

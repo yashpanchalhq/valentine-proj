@@ -118,7 +118,7 @@ export default function Home() {
         transition={{ duration: 1 }}
         style={{ padding: '4rem 0', marginTop: '2rem' }}
       >
-        <ParticleText text="ANU RAWAT" />
+        <ParticleText text="Annu🍒" />
       </motion.section>
 
       {/* Hero Section */}
@@ -151,7 +151,7 @@ export default function Home() {
         >
           Happy Valentine Week
           <br />
-          <span className={styles.subtitle}>Anu Rawat 💕</span>
+          <span className={styles.subtitle}>Annu🍒 💕</span>
         </motion.h1>
         
         <motion.p
@@ -160,7 +160,7 @@ export default function Home() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
         >
-          ✨ Every moment with Anu is special, but this week is pure magic ✨
+          ✨ Every moment with Annu is special, but this week is pure magic ✨
         </motion.p>
         
         <motion.div
@@ -215,9 +215,9 @@ export default function Home() {
         transition={{ duration: 0.8 }}
       >
         <div className={styles.letter}>
-          <h3 className={styles.letterTitle}>💌 A Letter For Anu 💌</h3>
+          <h3 className={styles.letterTitle}>💌 A Letter For Annu 💌</h3>
           <p className={styles.letterContent}>
-            Dear Anu Rawat,
+            Dear Annu🍒,
             <br /><br />
             Every moment with you feels like a beautiful dream I never want to wake up from.
             Your smile lights up my entire world, and your laughter is the sweetest sound I've ever heard.
@@ -233,7 +233,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className={styles.footer}>
-        <p>Made with 💕 and endless love for Anu Rawat</p>
+        <p>Made with 💕 and endless love for Annu🍒</p>
         <p style={{ fontSize: '0.9rem', opacity: 0.8, marginTop: '0.5rem' }}>
           ✨ You deserve all the happiness in the world ✨
         </p>

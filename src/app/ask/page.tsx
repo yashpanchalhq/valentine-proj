@@ -10,11 +10,34 @@ export default function AskPage() {
   const [noButtonPos, setNoButtonPos] = useState({ x: 0, y: 0 });
   const [yesHovered, setYesHovered] = useState(false);
   const [answered, setAnswered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [rejectionMessage, setRejectionMessage] = useState('');
+  const [showRejection, setShowRejection] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const noButtonRef = useRef<HTMLButtonElement>(null);
-  
+
+  const rejectionMessages = [
+    "No chance, babe 💕",
+    "You can't escape, My love 💖",
+    "Try again, sweetheart 😘",
+    "Not happening, darling 🥰",
+    "Nice try, my cherry 🍒",
+    "Think again, beautiful 💝",
+    "Never, my love 💞"
+  ];
+
   // Heartbeat animation for Yes button
   const scale = useMotionValue(1);
+
+  // Detect if device is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   
   useEffect(() => {
     if (yesHovered) {
@@ -34,19 +57,36 @@ export default function AskPage() {
   }, [yesHovered, scale]);
 
   const handleNoMouseEnter = () => {
+    // On mobile, show rejection message instead of moving the button
+    if (isMobile) {
+      return;
+    }
+
     if (!containerRef.current || !noButtonRef.current) return;
-    
+
     const container = containerRef.current.getBoundingClientRect();
     const button = noButtonRef.current.getBoundingClientRect();
-    
+
     // Random position within container bounds
     const maxX = container.width - button.width - 100;
     const maxY = container.height - button.height - 100;
-    
+
     const newX = Math.random() * maxX - maxX / 2;
     const newY = Math.random() * maxY - maxY / 2;
-    
+
     setNoButtonPos({ x: newX, y: newY });
+  };
+
+  const handleNoClick = () => {
+    // On mobile, show a random rejection message
+    if (isMobile) {
+      const randomMessage = rejectionMessages[Math.floor(Math.random() * rejectionMessages.length)];
+      setRejectionMessage(randomMessage);
+      setShowRejection(true);
+      setTimeout(() => {
+        setShowRejection(false);
+      }, 2000);
+    }
   };
 
   const handleYesClick = () => {
@@ -124,17 +164,18 @@ export default function AskPage() {
           <motion.button
             ref={noButtonRef}
             className={styles.noButton}
-            animate={{ 
-              x: noButtonPos.x, 
+            animate={{
+              x: noButtonPos.x,
               y: noButtonPos.y,
             }}
-            transition={{ 
-              type: 'spring', 
-              stiffness: 300, 
-              damping: 20 
+            transition={{
+              type: 'spring',
+              stiffness: 300,
+              damping: 20
             }}
             onMouseEnter={handleNoMouseEnter}
             onFocus={handleNoMouseEnter}
+            onClick={handleNoClick}
           >
             No 😢
           </motion.button>
@@ -143,6 +184,19 @@ export default function AskPage() {
         <p className={styles.hint}>
           (Hint: The right answer makes me happy 🥰)
         </p>
+
+        {/* Rejection Message for Mobile */}
+        {showRejection && (
+          <motion.div
+            className={styles.rejectionMessage}
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+          >
+            {rejectionMessage}
+          </motion.div>
+        )}
       </motion.div>
     </div>
   );
